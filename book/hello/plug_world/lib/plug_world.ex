@@ -5,7 +5,6 @@ defmodule PlugWorld do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
-    IO.puts("HERE")
     
     children = [
       # Define workers and child supervisors to be supervised
