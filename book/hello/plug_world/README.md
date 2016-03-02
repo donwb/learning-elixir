@@ -1,20 +1,3 @@
 # PlugWorld
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
-
-  1. Add plug_world to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:plug_world, "~> 0.0.1"}]
-        end
-
-  2. Ensure plug_world is started before your application:
-
-        def application do
-          [applications: [:plug_world]]
-        end
-
+Most of this example app came from: http://www.jarredtrost.com/2015/05/30/getting-started-with-elixir-plug-routes/
