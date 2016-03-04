@@ -32,9 +32,19 @@ defmodule PlugWorld.Router do
 
     # a little json action
     get "/json/:name" do
+        res = PlugWorld.Db.select_all()
+        
+    	folks = Enum.map(res.rows, fn(x)
+    	->
+    	    [name, job, desc] = x
+    	    %{name: String.strip(name), 
+    	      job: String.strip(job),
+    	      desc: String.strip(desc)}
+    	end)
+    	
         conn
         |>put_resp_content_type("application/json")
-        |>send_resp(200, Poison.encode!(%{name: name}))
+        |>send_resp(200, Poison.encode!(folks))
     end
 
     # move actions to their own file and just handle the route here

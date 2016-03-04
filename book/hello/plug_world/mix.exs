@@ -14,7 +14,7 @@ defmodule PlugWorld.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :cowboy, :plug, :poison],
+    [applications: [:logger, :cowboy, :plug, :poison, :postgrex],
      mod: {PlugWorld, []},
      env: []]
   end
@@ -31,6 +31,7 @@ defmodule PlugWorld.Mixfile do
   defp deps do
     [{:cowboy, "~> 1.0.0"},
      {:plug, "~> 0.12"},
-     {:poison, "~> 1.4.0"}]
+     {:poison, "~> 1.4.0"},
+     {:postgrex, "~> 0.11.1"}]
   end
 end
