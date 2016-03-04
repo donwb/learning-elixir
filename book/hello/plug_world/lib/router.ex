@@ -1,6 +1,5 @@
 defmodule PlugWorld.Router do
     use Plug.Router
-    import Plug.Conn
     
     if Mix.env == :dev do
         IO.puts("debug")
@@ -53,7 +52,4 @@ defmodule PlugWorld.Router do
       |> halt
     end
 
-    def start do
-        Plug.Adapters.Cowboy.http Rest, [], port: 8080
-    end
 end

@@ -16,7 +16,7 @@ defmodule PlugWorld.Mixfile do
   def application do
     [applications: [:logger, :cowboy, :plug, :poison],
      mod: {PlugWorld, []},
-     env: [cowboy_port: 8080]]
+     env: []]
   end
 
   # Dependencies can be Hex packages:
