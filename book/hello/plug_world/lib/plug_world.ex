@@ -18,7 +18,9 @@ defmodule PlugWorld do
   end
   
   def run do
-    opts = [port: 8080]
+    {port, _} = Integer.parse(System.get_env("PORT"))
+    opts = [port: port]
+    
     {:ok, _} = Plug.Adapters.Cowboy.http PlugWorld.Router, [], opts
   end
   
