@@ -17,6 +17,10 @@ defmodule PlugWorld.Router do
         IO.puts inspect conn
         send_resp(conn, 200, "This thing runs on Elixir Plugs!")
     end
+    
+    get "/p" do
+        send_file(conn, 200, "priv/static/index.html")
+    end
 
     # The guard will ensure the correct route is run
     get "/about/:name" when name == "history" do
