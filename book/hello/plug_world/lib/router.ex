@@ -1,10 +1,14 @@
 defmodule PlugWorld.Router do
     use Plug.Router
+    use Plug.Builder
+    
     
     if Mix.env == :dev do
         IO.puts("debug")
         use Plug.Debugger
     end
+    
+    plug Plug.Static, at: "/public", from: :plug_world
     
     plug :match
     plug :dispatch
