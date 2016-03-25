@@ -1,5 +1,6 @@
 defmodule PgTest do
-
+	import Ecto.Query
+	
 	def select_all() do
 		{:ok, pid} = connect
 
@@ -38,4 +39,15 @@ defmodule PgTest do
 	defp connect() do
 		{:ok, pid} = Postgrex.start_link(hostname: "localhost", username: "postgres", password: "postgres", database: "postgres")
 	end
+	
+	
+	def test_query do
+	
+		query = from e in Employee,
+			select: e
+			
+		res = PgTest.Repo.all(query)
+		
+	end
+	
 end

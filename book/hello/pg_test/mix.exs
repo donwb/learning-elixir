@@ -14,7 +14,7 @@ defmodule PgTest.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :postgrex]]
+    [applications: [:logger, :postgrex, :ecto]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,7 @@ defmodule PgTest.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:postgrex, "~> 0.11.1"}]
+    [{:postgrex, "~> 0.11.1"},
+     {:ecto, "~> 1.1.5"}]
   end
 end

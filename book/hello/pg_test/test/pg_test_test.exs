@@ -16,4 +16,10 @@ defmodule PgTestTest do
   	
   	assert String.strip(name) == "Wilma Flinstone"
   end
+  
+  test "is able to do Ecto query" do
+    ret = PgTest.test_query
+    assert 1=1
+  end
+  
 end
