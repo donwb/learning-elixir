@@ -9,7 +9,7 @@ defmodule PgTest do
 
     	Enum.each(res.rows, fn(r)
     		-> 
-    			[name, dept, job] = r
+    			[name, dept, job, id] = r
 
     			# not thinking this is idomatic
     			n = String.strip(name)
@@ -44,6 +44,7 @@ defmodule PgTest do
 	def test_query do
 	
 		query = from e in Employee,
+			where: e.id > 7,
 			select: e
 			
 		res = PgTest.Repo.all(query)

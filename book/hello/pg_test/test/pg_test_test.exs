@@ -12,14 +12,18 @@ defmodule PgTestTest do
   	ret = PgTest.select_one("Wilma Flinstone")
   	
   	# Do you really need to ignore the rest of the tuples?
-  	[name, _, _] = ret
+  	[name, _, _, _] = ret
   	
   	assert String.strip(name) == "Wilma Flinstone"
   end
   
   test "is able to do Ecto query" do
+    PgTest.Repo.start_link
+    
     ret = PgTest.test_query
-    assert 1=1
+    dept = String.strip(hd(ret).dept)
+    
+    assert dept == "IT"
   end
   
 end
