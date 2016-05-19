@@ -7,7 +7,7 @@ cond do
     2 * 2 != 4 ->
         IO.puts("nor does this")
     true ->
-        IO.puts("this does run though")
+        IO.puts("this does run though.. yes it does!!")
 end
 
 case name do
